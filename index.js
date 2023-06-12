@@ -68,12 +68,14 @@ function cau4() {
 // cau 5
 function cau5() {
     var giaTiInputCau5 = document.querySelector("#cau5 .inputCau5").value * 1;
-    var text = "";
+    var text = '';
 
-    for (var i = 1; i <= giaTiInputCau5; i++) {
-        text = text + i + "<br>";
+    for (var n = 2; n <= giaTiInputCau5; n++) {
+        if (n != 2 && n >= 3 && n % 2 != 0) {
+            console.log(n);
+            text = text + n + `<br>`;
+        }
     }
-    console.log(text);
-    document.getElementById("ketQuaCau5").innerHTML = text;
+    document.getElementById("ketQuaCau5").innerHTML = text; 
 }
 // end cau 5
