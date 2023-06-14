@@ -1,16 +1,15 @@
 // Câu 1
-
 function cau1() {
-    var n = 0;
-    var i = 0;
+    var tong = 0;
 
-    while (n < 10000) {
-        n++;
-        i += n;
+    for (a = 1; a < 10000; a++) {
+        tong += a;
+        if (tong > 10000) {
+            break;
+        }
     }
-    console.log(i);
 
-    document.getElementById("ketQuaCau1").innerHTML = i;
+    document.getElementById("ketQuaCau1").innerHTML = a;
 }
 
 // end cau 1
@@ -20,15 +19,14 @@ function cau2() {
     var x = document.getElementById("nhapSoX").value * 1;
     var n = document.getElementById("nhapSoN").value * 1;
 
-    var luyThua = 1;
+    var bien = 0;
     var S = 0;
 
     for (var i = 1; i <= n; i++) {
-        luyThua = luyThua * n;
-        S += luyThua;
+        bien = x ** i;
+        S += bien;
     }
 
-    console.log(luyThua);
     console.log(S);
 
     document.getElementById("ketQuaCau2").innerHTML = S;
@@ -59,9 +57,9 @@ function cau4() {
 
     for (var i = 0; i <= 10; i++) {
         if (i % 2 == 0) {
-            bienDiv[i].style.background = "red";
-        } else {
             bienDiv[i].style.background = "blue";
+        } else {
+            bienDiv[i].style.background = "red";
         }
     }
 }
@@ -71,12 +69,17 @@ function cau4() {
 // cau 5
 function cau5() {
     var giaTiInputCau5 = document.querySelector("#cau5 .inputCau5").value * 1;
-    var text = "";
+    var text = '';
 
-    for (var i = 1; i <= giaTiInputCau5; i++) {
-        text = text + i + "<br>";
+    for (var n = 0; n <= giaTiInputCau5; n++) {
+        if (n == 2) {
+            text += n + `<br>`;
+        }
+        if (n != 2 && n >= 3 && n % 2 != 0) {
+            console.log(n);
+            text = text + n + `<br>`;
+        }
     }
-    console.log(text);
     document.getElementById("ketQuaCau5").innerHTML = text;
 }
 // end cau 5
